@@ -1,4 +1,6 @@
 <script setup>
+import HeaderComponent from '@/components/page_components/HeaderComponent.vue'
+
 const recordings = [
   {
     title: 'Getting it right the first time',
@@ -22,6 +24,7 @@ const recordings = [
 </script>
 
 <template>
+  <HeaderComponent class="pb-11"/>
   <div class="container mx-auto">
     <div class="overflow-x-auto">
       <table class="min-w-full">

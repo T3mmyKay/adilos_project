@@ -75,31 +75,7 @@ watch(route, () => {
 
       <section class="w-full lg:w-3/4 p-4 mx-auto">
 
-        <div class="container py-5">
-          <BreadcrumbComponent class="py-1" />
-          <div class="flex flex-col lg:flex-row items-center justify-between mb-4">
-            <div class="flex items-center mb-4 lg:mb-0">
-              <span class="mr-2 text-black text-2xl">My Recordings</span>
-              <span class="text-grey-text text-2xl">25</span>
-            </div>
-            <div class="grid grid-cols-1 sm:grid sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-4 gap-4">
-              <!-- By Date Filter -->
-              <ButtonComponent text="By Date" variant="white" icon="bi bi-filter"
-                               class="ring-1 ring-gray-300 hover:bg-gray-300 hover:ring-white transition-colors text-grey-text" />
-              <!-- Add Filter -->
-              <ButtonComponent text="Add Filter" variant="white" icon="bi bi-funnel"
-                               class="ring-1 ring-gray-300 hover:bg-gray-300 hover:ring-white transition-colors text-grey-text" />
-              <!-- New Request Button -->
-              <ButtonComponent text="New Request" variant="primary" icon="bi bi-camera-video"
-                               class="ring-1 ring-gray-300 hover:ring-white transition-colors" />
-              <!-- Start Recording -->
-              <ButtonComponent @click="toggleModal" text="Start Recording" variant="danger"
-                               icon="bi bi-record-circle-fill"
-                               class="ring-1 ring-gray-300 hover:ring-white transition-colors" />
-            </div>
-          </div>
-        </div>
-
+<RouterView></RouterView>
         <BaseModal @close-modal="toggleModal">
           <div class="p-4 md:p-5">
             <form action="#" class="flex flex-col font-poppins" @submit.prevent>
@@ -136,7 +112,6 @@ watch(route, () => {
           </div>
 
         </BaseModal>
-        <router-view></router-view>
       </section>
     </main>
 

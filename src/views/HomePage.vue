@@ -2,6 +2,7 @@
 
 import ButtonComponent from '@/components/ui_components/ButtonComponent.vue'
 import { useModalStore } from '@/stores/modal_store.js'
+import HeaderComponent from '@/components/page_components/HeaderComponent.vue'
 
 const modalStore = useModalStore();
 let toggleModal = () => {
@@ -10,7 +11,9 @@ let toggleModal = () => {
 </script>
 
 <template>
-  <div class="container flex items-center flex-col justify-center">
+<HeaderComponent class="pb-6"/>
+
+  <div class="container mx-auto flex items-center flex-col justify-center">
     <div class="w-full p-4 border-2 border-dashed border-ash rounded-lg flex flex-col items-center space-y-4 py-12">
       <img src="/images/undraw_video_files.svg" alt="Illustration" class="w-64 h-64" />
       <p class="text-center text-xl font-poppins font-medium">Say hello to the world!</p>
