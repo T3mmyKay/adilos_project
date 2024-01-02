@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { useRecordSettingsStore } from '@/stores/recordSettings_store.js'
+import { useRecordSettingsStore } from '@/stores/recordsettings_store.js'
 import NavBarComponent from '@/components/page_components/NavBarComponent.vue'
 import ButtonComponent from '@/components/ui_components/ButtonComponent.vue'
 
