@@ -6,7 +6,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/home', // Redirect '/' to a specific default route
+      redirect: '/', // Redirect '/' to a specific default route
       component: () => import('../components/layouts/LayoutComponent.vue'),
       children: [
         {
