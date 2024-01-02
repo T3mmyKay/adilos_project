@@ -13,24 +13,6 @@ const checkPermissions = async () => {
   try {
     await recordSettingsStore.checkAndSetPermissions();
 
-    // if (!recordSettingsStore.permissionsGranted) {
-    //   // Permissions are not granted, redirect to recordings page
-    //   await router.push('/recordings');
-    //   return;
-    // }
-    //
-    // if (recordSettingsStore.screen) {
-    //   await navigator.mediaDevices.getDisplayMedia({ video: true });
-    //   recordSettingsStore.screen = true;
-    // }
-    // if (recordSettingsStore.camera) {
-    //   await navigator.mediaDevices.getUserMedia({ video: true });
-    //   recordSettingsStore.camera = true;
-    // }
-    // if (recordSettingsStore.mic) {
-    //   await navigator.mediaDevices.getUserMedia({ audio: true });
-    //   recordSettingsStore.mic = true;
-    // }
   } catch (err) {
     console.error('Error querying permissions:', err);
     // If an error occurs (e.g., the user denies the permissions), redirect to recordings page
