@@ -1,5 +1,32 @@
+<script setup>
+import { inject, onMounted, onUnmounted, ref } from 'vue'
+import SidebarLinkComponent from '@/components/ui_components/SidebarLinkComponent.vue'
+import SidebarDropdownComponent from '@/components/page_components/SidebarDropdownComponent.vue'
+
+const isSidebarOpen = inject('isSidebarOpen')
+const toggleSidebar = inject('toggleSidebar')
+
+const sidebarRef = ref(null)
+
+onMounted(() => {
+  document.addEventListener('click', handleDocumentClick)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleDocumentClick)
+})
+
+const handleDocumentClick = (event) => {
+  if (isSidebarOpen.value && sidebarRef.value && !sidebarRef.value.contains(event.target)) {
+    console.log('Clicked outside of sidebar')
+    toggleSidebar(false)
+  }
+}
+</script>
+
 <template>
   <div
+    v-bind:ref="sidebarRef"
     id="drawer-navigation"
     class="fixed top-0 right-0 z-40 w-64 h-screen p-4 overflow-y-auto bg-white transition-transform lg:hidden"
     :class="{ 'visible': isSidebarOpen, 'hidden': !isSidebarOpen }"
@@ -51,31 +78,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { inject, onMounted, onUnmounted, ref } from 'vue'
-import SidebarLinkComponent from '@/components/ui_components/SidebarLinkComponent.vue'
-import SidebarDropdownComponent from '@/components/page_components/SidebarDropdownComponent.vue'
-
-const isSidebarOpen = inject('isSidebarOpen')
-const toggleSidebar = inject('toggleSidebar')
-
-const sidebarRef = ref(null)
-
-onMounted(() => {
-  document.addEventListener('click', handleDocumentClick)
-})
-
-onUnmounted(() => {
-  document.removeEventListener('click', handleDocumentClick)
-})
-
-const handleDocumentClick = (event) => {
-  if (isSidebarOpen.value && sidebarRef.value && !sidebarRef.value.contains(event.target)) {
-    toggleSidebar(false)
-  }
-}
-</script>
 
 <style lang="less" scoped>
 #drawer-navigation {
