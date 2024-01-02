@@ -77,7 +77,7 @@ const handleDocumentClick = (event) => {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 #drawer-navigation {
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
