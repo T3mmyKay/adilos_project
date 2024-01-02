@@ -1,10 +1,18 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, provide } from 'vue'
 import { useRouter } from 'vue-router'
 import { useRecordSettingsStore } from '@/stores/recordsettings_store.js'
 import NavBarComponent from '@/components/page_components/NavBarComponent.vue'
 import ButtonComponent from '@/components/ui_components/ButtonComponent.vue'
+import RightSidebarComponent from '@/components/page_components/RightSidebarComponent.vue'
 
+const isSidebarOpen = ref(false)
+provide('isSidebarOpen', isSidebarOpen)
+
+const toggleSidebar = () => {
+  isSidebarOpen.value = !isSidebarOpen.value
+}
+provide('toggleSidebar', toggleSidebar)
 const recordSettingsStore = useRecordSettingsStore()
 const permissionsGranted = ref(false)
 const streamElement = ref(null)
@@ -55,7 +63,8 @@ const startRecording = async () => {
 }
 </script>
 <template>
-  <NavBarComponent />
+  <NavBarComponent @toggle-sidebar="toggleSidebar" />
+  <RightSidebarComponent v-if="isSidebarOpen" />
   <div class="relative overflow-auto h-screen">
     <div class="absolute inset-0 bg"></div>
     <div

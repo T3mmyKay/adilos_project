@@ -1,5 +1,5 @@
 <script setup>
-import {useRouter} from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useRecordSettingsStore } from '@/stores/recordsettings_store.js'
 
 import NavBarComponent from '@/components/page_components/NavBarComponent.vue'
@@ -10,17 +10,18 @@ import BaseModal from '@/components/ui_components/BaseModal.vue'
 import { useModalStore } from '@/stores/modal_store.js'
 import SwitchComponent from '@/components/ui_components/SwitchComponent.vue'
 import ToastComponent from '@/components/ui_components/ToastComponent.vue'
-import { reactive, ref,provide } from 'vue'
+import { reactive, ref, provide, watch } from 'vue'
 import RightSidebarComponent from '@/components/page_components/RightSidebarComponent.vue'
 
+const route = useRoute()
 const modalStore = useModalStore()
 const router = useRouter()
 const recordSettings = useRecordSettingsStore()
-const toastMessage = ref('');
+const toastMessage = ref('')
 const toastState = reactive({
-  toastKey: 0,
-});
-let timeoutId = null;
+  toastKey: 0
+})
+let timeoutId = null
 
 const toggleModal = () => {
   modalStore.toggleModal()
@@ -30,17 +31,17 @@ const toggleModal = () => {
 const startRecording = async () => {
 
   if (!recordSettings.screen && !recordSettings.camera && !recordSettings.mic) {
-    toastMessage.value = 'Please select at least one setting ';
-    clearTimeout(timeoutId);
+    toastMessage.value = 'Please select at least one setting '
+    clearTimeout(timeoutId)
 
     timeoutId = setTimeout(() => {
-      toastMessage.value = '';
-      toastState.toastKey++;
-    }, 6000);
-    return;
+      toastMessage.value = ''
+      toastState.toastKey++
+    }, 6000)
+    return
   }
   try {
-modalStore.closeModal()
+    modalStore.closeModal()
     await router.push('/recording').catch(err => console.error('Error navigating to /recording', err))
   } catch (err) {
     console.error('Error accessing media devices.', err)
@@ -55,6 +56,12 @@ const toggleSidebar = () => {
 }
 provide('toggleSidebar', toggleSidebar)
 
+
+watch(route, () => {
+  if (isSidebarOpen.value) {
+    toggleSidebar()
+  }
+}, { deep: true })
 </script>
 
 <template>
@@ -123,7 +130,8 @@ provide('toggleSidebar', toggleSidebar)
                 <span class="mr-4 text-sidebar-text font-medium text-lg">Record Mic</span>
                 <SwitchComponent v-model="recordSettings.mic" active-text="On" inactive-text="Off"></SwitchComponent>
               </div>
-            <ButtonComponent type="button" @click="startRecording" variant="primary" text="Start Recording"  padding="py-3.5 px-4" class="w-10/12 mx-auto" />
+              <ButtonComponent type="button" @click="startRecording" variant="primary" text="Start Recording"
+                               padding="py-3.5 px-4" class="w-10/12 mx-auto" />
             </form>
           </div>
 
