@@ -1,6 +1,6 @@
 <script setup>
 import {useRouter} from 'vue-router'
-import { useRecordSettingsStore } from '@/stores/recordSettings_store.js'
+import { useRecordSettingsStore } from '@/stores/recordsettings_store.js'
 
 import NavBarComponent from '@/components/page_components/NavBarComponent.vue'
 import LeftSidebarComponent from '@/components/page_components/LeftSidebarComponent.vue'
