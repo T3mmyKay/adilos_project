@@ -41,7 +41,7 @@ const emits = defineEmits(['toggle-sidebar'])
             <div class="text-xs sm:text-sm text-nav-link">user@email.com</div>
           </div>
         </div>
-        <div class="text-xl text-gray-700 cursor-pointer ml-2 sm:ml-4 lg:hidden block hover:text-blue-700 transition" @click="emits('toggle-sidebar')">
+        <div id="toggleSidebarButton" class="text-xl text-gray-700 cursor-pointer ml-2 sm:ml-4 lg:hidden block hover:text-blue-700 transition" @click="emits('toggle-sidebar')">
           <i class="fa fa-bars"></i>
         </div>
       </div>

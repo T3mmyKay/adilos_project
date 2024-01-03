@@ -4,7 +4,6 @@ import { useRecordSettingsStore } from '@/stores/recordsettings_store.js'
 
 import NavBarComponent from '@/components/page_components/NavBarComponent.vue'
 import LeftSidebarComponent from '@/components/page_components/LeftSidebarComponent.vue'
-import BreadcrumbComponent from '@/components/ui_components/BreadcrumbComponent.vue'
 import ButtonComponent from '@/components/ui_components/ButtonComponent.vue'
 import BaseModal from '@/components/ui_components/BaseModal.vue'
 import { useModalStore } from '@/stores/modal_store.js'

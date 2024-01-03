@@ -11,7 +11,8 @@ const props = defineProps({
 
 const isOpen = ref(false)
 
-const toggleDropdown = () => {
+const toggleDropdown = (event) => {
+  event.stopPropagation();
   isOpen.value = !isOpen.value
 }
 </script>
