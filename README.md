@@ -1,6 +1,14 @@
-# AdilosProject
+🎥 **[Your Project Name] - Browser-based Video Recording Application**
 
-This template should help get you started developing with Vue 3 in Vite.
+Record your screen, camera, and audio directly in your browser with this versatile and user-friendly video recording application. Perfect for creating tutorials, presentations, and virtual meetings without the need for downloads or installations. Explore a seamless recording experience with native browser APIs.
+
+🚀 **Key Features:**
+- Screen recording with browser APIs
+- Webcam and audio capture support
+- No software downloads required
+- Ideal for tutorials, presentations, and online collaboration
+- User-friendly interface and easy sharing options
+
 
 ## Recommended IDE Setup
 
