@@ -7,7 +7,7 @@ Record your screen, camera, and audio directly in your browser with this versati
 - Webcam and audio capture support
 - No software downloads required
 - Ideal for tutorials, presentations, and online collaboration
-- User-friendly interface and easy sharing options
+- User-friendly interface
 
 
 ## Recommended IDE Setup
