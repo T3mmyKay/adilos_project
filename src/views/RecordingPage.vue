@@ -63,6 +63,7 @@ const startRecording = async () => {
 }
 </script>
 <template>
+<div>
   <NavBarComponent @toggle-sidebar="toggleSidebar" />
   <RightSidebarComponent v-if="isSidebarOpen" />
   <div class="relative overflow-auto h-screen">
@@ -83,6 +84,7 @@ const startRecording = async () => {
                        class="w-8/12 sm:w-5/12 md:w-4/12" />
     </div>
   </div>
+</div>
 </template>
 
 <style lang="less" scoped>
