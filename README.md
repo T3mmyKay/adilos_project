@@ -1,4 +1,4 @@
-🎥 **[Your Project Name] - Browser-based Video Recording Application**
+🎥 **Adilo - Browser-based Video Recording Application**
 
 Record your screen, camera, and audio directly in your browser with this versatile and user-friendly video recording application. Perfect for creating tutorials, presentations, and virtual meetings without the need for downloads or installations. Explore a seamless recording experience with native browser APIs.
 
