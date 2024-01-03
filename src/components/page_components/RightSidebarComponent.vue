@@ -17,6 +17,7 @@ onUnmounted(() => {
 })
 
 const handleDocumentClick = (event) => {
+  console.log('handleDocumentClick', event.target)
   if (isSidebarOpen.value && sidebarRef.value && !event.target.closest('#drawer-navigation') && !event.target.closest('#toggleSidebarButton')) {
     toggleSidebar(false)
   }
