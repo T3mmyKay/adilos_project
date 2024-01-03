@@ -15,7 +15,7 @@ const emits = defineEmits(['toggle-sidebar'])
             <circle cx="50" cy="50" r="30" fill="white" />
           </svg>
 
-        <span class="font-helvetica font-bold text-2xl text-cyan-blue sm:block hidden">Adilo</span>
+        <span class="font-helvetica font-bold text-2xl text-cyan-blue sm:block hidden tracking-wider">Adilo</span>
         </RouterLink>
       </div>
 

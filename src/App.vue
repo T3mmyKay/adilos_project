@@ -9,7 +9,7 @@
   </RouterView>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .page-enter-active, .page-leave-active {
   transition: 600ms ease all;
 }

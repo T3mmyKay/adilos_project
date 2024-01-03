@@ -75,7 +75,11 @@ watch(route, () => {
 
       <section class="w-full lg:w-3/4 p-4 mx-auto">
 
-<RouterView></RouterView>
+        <RouterView v-slot="{Component}">
+          <Transition name="page" mode="out-in">
+            <Component :is="Component"/>
+          </Transition>
+        </RouterView>
         <BaseModal @close-modal="toggleModal">
           <div class="p-4 md:p-5">
             <form action="#" class="flex flex-col font-poppins" @submit.prevent>
@@ -120,6 +124,12 @@ watch(route, () => {
 
 </template>
 
-<style scoped>
+<style lang="less" scoped>
+.page-enter-active, .page-leave-active {
+  transition: 600ms ease all;
+}
 
+.page-enter-from, .page-leave-to {
+  opacity: 0;
+}
 </style>
