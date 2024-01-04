@@ -95,19 +95,19 @@ watch(route, () => {
               <!-- Record Screen Switch -->
               <div class="flex items-center justify-between mb-7">
                 <span class="mr-4 text-sidebar-text font-medium text-lg">Record Screen</span>
-                <SwitchComponent v-model="recordSettings.screen" active-text="On" inactive-text="Off" />
+                <SwitchComponent v-model="recordSettings.screen" />
               </div>
 
               <!-- Record Camera Switch -->
               <div class="flex items-center justify-between mb-7">
                 <span class="mr-4 text-sidebar-text font-medium text-lg">Record Camera</span>
-                <SwitchComponent v-model="recordSettings.camera" active-text="On" inactive-text="Off"></SwitchComponent>
+                <SwitchComponent v-model="recordSettings.camera"/>
               </div>
 
               <!-- Record Mic Switch -->
               <div class="flex items-center justify-between mb-11">
                 <span class="mr-4 text-sidebar-text font-medium text-lg">Record Mic</span>
-                <SwitchComponent v-model="recordSettings.mic" active-text="On" inactive-text="Off"></SwitchComponent>
+                <SwitchComponent v-model="recordSettings.mic"/>
               </div>
               <ButtonComponent type="button" @click="startRecording" variant="primary" text="Start Recording"
                                padding="py-3.5 px-4" class="w-10/12 mx-auto" />

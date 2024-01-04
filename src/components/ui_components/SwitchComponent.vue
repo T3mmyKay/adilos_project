@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 const props = defineProps({
   modelValue: Boolean
@@ -16,7 +16,7 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue'])
 
-const showCheckMark = ref(false);
+const showCheckMark = ref(props.modelValue);
 
 const onChange = (event) => {
   emit('update:modelValue', event.target.checked);
@@ -25,6 +25,9 @@ const onChange = (event) => {
 const onTransitionEnd = () => {
   showCheckMark.value = props.modelValue;
 };
+watch(() => props.modelValue, (newValue) => {
+  showCheckMark.value = newValue;
+});
 </script>
 <style lang="less" scoped>
 .switch {
